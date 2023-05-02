@@ -80,7 +80,6 @@ public class GenerateFile {
                                         String serviceName = FilenameUtils.getBaseName(serviceFile.getName());
                                         srvcNames.add(serviceName);
 
-                                        // file 내부 Impl로 변환
                                         Path srvcFilePath = Paths.get(srvcDir + "\\" + serviceFile.getName());
                                         byte[] bytes = Files.readAllBytes(srvcFilePath);
                                         String content = new String(bytes);
@@ -98,13 +97,11 @@ public class GenerateFile {
                                         } catch (IOException e){
                                             e.printStackTrace();
                                         }
-                                        ///////
 
-                                        // 파일명 변경 및 위치 이동
                                         File toImplFile = new File(implPath + "\\" + serviceName + "Impl.java");
                                         FileUtils.moveFile(serviceFile, toImplFile);
                                     }
-                                    // 디렉토리를 serviceImpl로 변경
+
                                     File toImplDir = new File(prntsDir + "\\serviceImpl");
                                     file.renameTo(toImplDir);
 
@@ -123,7 +120,6 @@ public class GenerateFile {
                                         Files.write(created, str.getBytes());
                                     }
                                 }
-
                             }
                         }
                     } else {
