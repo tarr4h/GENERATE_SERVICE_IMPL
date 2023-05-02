@@ -2,5 +2,5 @@
 
 SERVICE(CLASS) -> SERVICE(INTERFACE) + SERVICEIMPL(CLASS)
 
-! myDir, baseDir 지정 필요
+! myDir, baseDir 지정 필요\n
 ! INTERFACE에 METHOD 추가 기능 반영 예정
